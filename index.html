@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>✦ LUMEN PASSION QUEST ✦ | Archetype · Astrology · Artist's Way</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Passion Life Path Compass</title>
     <style>
         * {
             margin: 0;
@@ -13,14 +13,13 @@
 
         body {
             min-height: 100vh;
-            background: radial-gradient(ellipse at 30% 20%, #0c0b1a, #02010a);
-            font-family: 'Segoe UI', 'Inter', 'Quicksand', system-ui, -apple-system, sans-serif;
+            background: radial-gradient(ellipse at 30% 20%, #0c0d1c, #02010a);
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, 'Times New Roman', serif;
             padding: 2rem 1rem;
-            color: #eceaff;
+            color: #eceeff;
             position: relative;
         }
 
-        /* cosmic galaxy subtle overlay */
         body::before {
             content: "";
             position: fixed;
@@ -28,510 +27,629 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: radial-gradient(1px 1px at 12% 42%, #fff9e0, rgba(0,0,0,0)), 
-                              radial-gradient(2px 2px at 78% 13%, #ffd8b5, rgba(0,0,0,0)),
-                              radial-gradient(1px 1px at 45% 88%, #cbb2ff, rgba(0,0,0,0)),
-                              radial-gradient(3px 3px at 91% 64%, #98e0ff, rgba(0,0,0,0));
+            background-image: radial-gradient(1px 1px at 12% 42%, #dad3ff, rgba(0,0,0,0)), 
+                              radial-gradient(2px 2px at 78% 13%, #ffe0b5, rgba(0,0,0,0)),
+                              radial-gradient(1px 1px at 45% 88%, #bba5ff, rgba(0,0,0,0));
             background-repeat: no-repeat;
-            background-size: 300px 300px, 500px 500px, 200px 200px, 400px 400px;
+            background-size: 300px 300px, 500px 500px, 200px 200px;
             pointer-events: none;
-            opacity: 0.5;
+            opacity: 0.35;
             z-index: 0;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
-            background: rgba(6, 8, 22, 0.6);
-            backdrop-filter: blur(12px);
-            border-radius: 2.5rem;
-            padding: 2rem 1.8rem;
-            border: 1px solid rgba(210, 180, 255, 0.3);
-            box-shadow: 0 25px 40px rgba(0,0,0,0.5);
+            background: rgba(6, 8, 24, 0.7);
+            backdrop-filter: blur(14px);
+            border-radius: 2rem;
+            padding: 2rem 2rem;
+            border: 1px solid rgba(200, 180, 255, 0.25);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5);
         }
 
         h1 {
             font-size: 2rem;
             text-align: center;
-            font-weight: 600;
-            letter-spacing: -0.3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 0.5rem;
+            font-weight: 500;
+            letter-spacing: -0.2px;
+            margin-bottom: 0.4rem;
         }
 
-        .gold-text {
-            background: linear-gradient(130deg, #FFE7C4, #D6B0FF);
+        .gold {
+            background: linear-gradient(135deg, #FFE7C4, #CFB0FF);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        .subhead {
+        .sub {
             text-align: center;
-            border-bottom: 1px dashed #9a8cff40;
+            border-bottom: 1px solid #b9a5ff40;
             display: inline-block;
             width: auto;
             margin: 0 auto 1rem;
-            padding-bottom: 6px;
-            font-weight: 400;
-            font-size: 0.9rem;
+            padding-bottom: 5px;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
         }
 
-        .intro-mystic {
-            background: rgba(25, 22, 50, 0.7);
-            border-radius: 1.8rem;
-            padding: 1.2rem 1.6rem;
+        .intro-panel {
+            background: rgba(20, 18, 45, 0.75);
+            border-radius: 1.5rem;
+            padding: 1rem 1.5rem;
             margin-bottom: 2rem;
-            border-left: 4px solid #c6a0ff;
-            font-size: 0.98rem;
+            border-left: 3px solid #b296ff;
+            font-size: 0.95rem;
             line-height: 1.5;
+            text-align: center;
+        }
+
+        .birth-form {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 1.8rem;
+            padding: 1.6rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .birth-input {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 1rem 0;
+        }
+
+        .birth-input input, .birth-input select {
+            background: #191e3a;
+            border: 1px solid #8f7ad6;
+            padding: 10px 18px;
+            border-radius: 40px;
+            color: white;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        button {
+            background: #2b2660;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            color: #f3edff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 1px solid #a692ff;
+        }
+
+        button:hover {
+            background: #45408b;
+            transform: translateY(-2px);
         }
 
         .progress-area {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            gap: 15px;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 1.8rem;
+            gap: 12px;
         }
 
         .progress-track {
             flex: 1;
-            height: 8px;
+            height: 6px;
             background: #1e1a3a;
-            border-radius: 20px;
+            border-radius: 10px;
             overflow: hidden;
         }
 
         .progress-fill {
             width: 0%;
             height: 100%;
-            background: linear-gradient(90deg, #c6a0ff, #e6c78c);
-            border-radius: 20px;
-            transition: width 0.25s ease;
+            background: #c3a6ff;
+            transition: width 0.2s;
         }
 
-        .counter-badge {
-            background: #2a234b;
-            padding: 4px 16px;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            font-weight: 500;
+        .q-counter {
+            background: #282454;
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            white-space: nowrap;
         }
 
         .question-card {
-            background: rgba(12, 10, 30, 0.75);
-            border-radius: 2rem;
-            padding: 1.5rem;
+            background: rgba(14, 12, 35, 0.85);
+            border-radius: 1.8rem;
+            padding: 1.6rem;
             margin: 1rem 0;
-            border: 1px solid rgba(210, 170, 255, 0.4);
-            transition: all 0.2s;
+            border: 1px solid #7a6bbd;
         }
 
         .question-text {
-            font-size: 1.35rem;
-            font-weight: 550;
-            margin-bottom: 1.4rem;
-            display: flex;
-            gap: 12px;
-            align-items: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            line-height: 1.4;
         }
 
-        .options-grid {
+        .scale-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            padding: 0 0.25rem;
+            font-size: 0.7rem;
+            color: #aaa6d4;
+            letter-spacing: 0.3px;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 0.5rem;
+        }
+
+        .option-item {
+            flex: 1;
+            background: rgba(255, 245, 235, 0.04);
+            border-radius: 60px;
+            padding: 12px 8px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
-        }
-
-        .option {
-            background: rgba(255, 245, 220, 0.04);
-            border-radius: 60px;
-            padding: 10px 18px;
-            display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 8px;
             cursor: pointer;
-            transition: 0.2s;
+            transition: 0.15s;
             border: 1px solid transparent;
+            text-align: center;
         }
 
-        .option:hover {
-            background: rgba(190, 150, 255, 0.12);
-            border-color: #bb9eff;
+        .option-item:hover {
+            background: rgba(170, 140, 255, 0.15);
+            border-color: #aa8eff;
         }
 
         input[type="radio"] {
-            accent-color: #e6b87e;
+            accent-color: #c9aeff;
             width: 18px;
             height: 18px;
             cursor: pointer;
+            margin: 0;
         }
 
-        label {
+        .option-label {
+            font-size: 0.75rem;
+            font-weight: 500;
             cursor: pointer;
-            font-size: 1rem;
-            flex: 1;
-            letter-spacing: 0.2px;
+            color: #ddd6ff;
         }
 
         .nav-buttons {
             display: flex;
             justify-content: space-between;
+            margin-top: 1.8rem;
             gap: 15px;
-            margin-top: 2rem;
-        }
-
-        button {
-            background: #2e295c;
-            border: none;
-            padding: 12px 26px;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: #f0ecff;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: 1px solid #877bcb;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        }
-
-        button:hover:not(:disabled) {
-            background: #4b4185;
-            transform: translateY(-2px);
-            border-color: #ffdd99;
-        }
-
-        button:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
         }
 
         .result-card {
             margin-top: 2rem;
-            background: rgba(0, 0, 0, 0.65);
+            background: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(16px);
             border-radius: 2rem;
-            padding: 1.8rem;
-            text-align: center;
+            padding: 2rem;
             display: none;
-            border: 2px solid #f2cf8e;
+            border: 2px solid #f0cf8e;
+            text-align: center;
         }
 
-        .result-archetype {
+        .passion-title {
             font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
+            font-weight: 700;
             margin: 0.5rem 0;
+            background: linear-gradient(135deg, #FFE7C4, #D6B0FF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        .action-steps {
-            background: #19143b;
+        .persona-desc {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(255,255,240,0.05);
+            border-radius: 1rem;
+        }
+
+        .action-box {
+            background: #19173f;
             border-radius: 1.5rem;
             padding: 1.2rem;
             text-align: left;
             margin: 1rem 0;
         }
 
-        .badge-cluster {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin: 1rem 0;
-        }
-
-        .pill {
-            background: #302a60;
-            border-radius: 60px;
-            padding: 6px 16px;
+        .career-pill {
+            display: inline-block;
+            background: #3a2e7a;
+            padding: 5px 14px;
+            border-radius: 30px;
+            margin: 5px;
             font-size: 0.8rem;
         }
 
         footer {
             text-align: center;
             font-size: 0.7rem;
-            margin-top: 2.2rem;
+            margin-top: 2rem;
             opacity: 0.6;
         }
 
-        @media (max-width: 620px) {
-            .container {
-                padding: 1.2rem;
-            }
-            .question-text {
-                font-size: 1.1rem;
-            }
+        @media (max-width: 680px) {
+            .container { padding: 1.2rem; }
+            .question-text { font-size: 1rem; }
+            .option-label { font-size: 0.6rem; }
+            .option-item { padding: 8px 4px; }
+            .scale-row { font-size: 0.55rem; }
+            .passion-title { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
-<div class="container" id="appRoot">
-    <h1>
-        <span>✦</span> LUMEN PASSION QUEST <span>✦</span>
-    </h1>
-    <div style="text-align: center;"><span class="subhead">the artist's way · jungian depths · astral signature · life path weave</span></div>
-
-    <div class="intro-mystic">
-        🌙 <strong>the inner compass ritual</strong> — this oracle blends creative recovery (Julia Cameron), Carl Jung’s archetypes, zodiac currents & life path patterns.  
-        answer from instinct, not perfection. each response carves a map toward your authentic creative self. after 70 questions, you’ll receive a soul-archetype + precise actions to unfold your passion.
+<div class="container" id="app">
+    <div class="logo-container">
+            <img src="https://i.ibb.co/qLvdSn6z/Green-Logo-Glow.png" alt="Green Logo Glow" class="your-logo">
+        </div>
+        <div class="glyph-container">
+            <span class="glyph">🌀</span>
+            <span class="glyph">👁️</span>
+            <span class="glyph">🌀</span>
+        </div>
+    <h1><span class="gold">Passion Life Path Compass</span></h1>
+    <div style="text-align: center;"><span class="sub">life path number · archetypal depth · creative ignition</span></div>
+    <div class="intro-panel">
+        Your birth date reveals your Life Path Number. Then you will answer 25 questions tailored to that path.<br>
+        Based on your answers, you will discover one of 4 unique personas within your Life Path — each with its own career paths, creative fuel, and actionable rituals.
     </div>
 
-    <div class="progress-area">
-        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-        <div class="counter-badge" id="counterDisplay">0 / 70</div>
+    <div id="stepLifePath" class="step-section">
+        <div class="birth-form">
+            <div style="font-size: 1.2rem; margin-bottom: 10px;">Enter your birth date</div>
+            <div class="birth-input">
+                <input type="number" id="birthDay" placeholder="Day (1-31)" min="1" max="31" style="width:100px;">
+                <select id="birthMonth">
+                    <option value="1">January</option><option value="2">February</option><option value="3">March</option>
+                    <option value="4">April</option><option value="5">May</option><option value="6">June</option>
+                    <option value="7">July</option><option value="8">August</option><option value="9">September</option>
+                    <option value="10">October</option><option value="11">November</option><option value="12">December</option>
+                </select>
+                <input type="number" id="birthYear" placeholder="Year (e.g., 1985)" min="1900" max="2026" style="width:110px;">
+            </div>
+            <button id="calculateBtn">Unlock Life Path & Begin</button>
+        </div>
     </div>
 
-    <div id="questionsPanel"></div>
-
-    <div class="nav-buttons">
-        <button id="prevBtn" disabled>◀  previous</button>
-        <button id="nextBtn">next  ▶</button>
-        <button id="finishBtn" style="display: none;">✨  reveal passion fate  ✨</button>
+    <div id="questionnaireArea" style="display: none;">
+        <div class="progress-area">
+            <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+            <div class="q-counter" id="counterText">0 / 0</div>
+        </div>
+        <div id="questionsContainer"></div>
+        <div class="nav-buttons">
+            <button id="prevQBtn" disabled>← Previous</button>
+            <button id="nextQBtn">Next →</button>
+            <button id="revealBtn" style="display: none;">Ignite Passion →</button>
+        </div>
     </div>
 
-    <div id="resultContainer" class="result-card"></div>
-    <footer>grounded in the artist’s way, jungian shadow & light, astrology archetypes | leap & the net appears</footer>
+    <div id="resultPanel" class="result-card"></div>
+    <footer>archetypal cartography · creative awakening · soul-led action</footer>
 </div>
 
 <script>
-    // --------------------------------------------------------------
-    // 70 QUESTIONS : integrates The Artist's Way (block recovery, morning pages, artist date, core negatives), 
-    // Jungian functions/archetypes, life path tendencies, astrology affinities, shadow, creative U-turns, virtue trap.
-    // first question asks for birthday for astro inclination (broad)
-    // --------------------------------------------------------------
-    const questions = [
-        { text: "🌙 your birth date (astrological anchor):", options: ["♈ Aries (Mar 21–Apr 19)", "♉ Taurus (Apr 20–May 20)", "♊ Gemini (May 21–Jun 20)", "♋ Cancer (Jun 21–Jul 22)", "♌ Leo (Jul 23–Aug 22)", "♍ Virgo (Aug 23–Sep 22)", "♎ Libra (Sep 23–Oct 22)", "♏ Scorpio (Oct 23–Nov 21)", "♐ Sagittarius (Nov 22–Dec 21)", "♑ Capricorn (Dec 22–Jan 19)", "♒ Aquarius (Jan 20–Feb 18)", "♓ Pisces (Feb 19–Mar 20)"] },
-        { text: "🎨 which creative block feels most familiar?", options: ["fear of failure", "perfectionism paralysis", "fear of abandonment / judgement", "procrastination & 'later'"] },
-        { text: "🧩 jungian dominant function?", options: ["intuition – big patterns & future", "sensation – details & reality", "thinking – logic & structure", "feeling – values & harmony"] },
-        { text: "🕯️ your relationship with morning pages (stream of consciousness):", options: ["never tried but curious", "i’d love consistency", "it feels pointless to me", "i already sense it unblocks me"] },
-        { text: "⚡ when you imagine 'artist date' (solo creative play), you feel:", options: ["excitement", "guilty / selfish", "inspired but scared", "i don’t know what i’d do"] },
-        { text: "🌊 core negative belief about being creative:", options: ["i'm not talented enough", "it's too late to start", "real artists suffer", "my family wouldn't approve"] },
-        { text: "🎭 the 'shadow artist' – you tend to:", options: ["support others' dreams but not my own", "criticize successful artists", "fantasize but never act", "envy those who create freely"] },
-        { text: "🌿 virtue trap: which is your snare?", options: ["being 'too responsible' for others", "waiting until finances are perfect", "appearing 'good' instead of authentic", "martyrdom through overwork"] },
-        { text: "🧙 jungian archetype that resonates:", options: ["the sage (wisdom seeker)", "the creator (artist/maker)", "the explorer (freedom chaser)", "the caregiver (healer)"] },
-        { text: "✨ life path resonance: what drives you most?", options: ["mastery & craft", "self-expression & visibility", "connection & empathy", "truth & transformation"] },
-        { text: "🌙 your inner critic's favorite phrase:", options: ["you're not original", "who do you think you are?", "you'll never finish anything", "it’s already been done"] },
-        { text: "💎 the 'crazymaker' in your life often:", options: ["creates drama before deadlines", "invalidates my creative time", "makes me doubt my intuition", "drains my energy with chaos"] },
-        { text: "🕯️ filling the well: what truly refuels you?", options: ["walking in nature", "visiting art / music", "deep conversation", "cooking or gardening"] },
-        { text: "🔥 when you feel anger about your blocked creativity, you:", options: ["suppress it", "use it as fuel to take action", "blame others or circumstances", "eat/shop/drink to numb"] },
-        { text: "🧘 your authentic creative 'play' style:", options: ["messy & experimental", "structured & detailed", "collaborative & spontaneous", "ritualistic & slow"] },
-        { text: "🎭 what would you try if failure was impossible?", options: ["write a novel / screenplay", "perform on stage / sing", "paint large canvases", "start a healing arts practice"] },
-        { text: "🌟 zodiac element affinity (beyond sun sign):", options: ["fire: passion & impulse", "earth: tangible results", "air: ideas & communication", "water: emotion & intuition"] },
-        { text: "🌊 what blocks your creative flow most days?", options: ["overwhelm / too many tasks", "self-doubt spiral", "lack of solitude", "comparison to others"] },
-        { text: "📖 the phrase 'leap and the net will appear' feels:", options: ["terrifying but magnetic", "naive / unrealistic", "deeply true for me", "i wish i could believe it"] },
-        { text: "💫 when you think about your life path number (numerology archetype):", options: ["1: leader/innovator", "2: peacemaker/partner", "3: expressive/creator", "4: builder/organizer", "5: freedom adventurer", "6: nurturer/artist", "7: seeker/mystic", "8: power/manifester", "9: humanitarian/visionary"] },
-        { text: "🌀 your deepest artistic fear:", options: ["being mediocre", "never finishing my vision", "being ridiculed", "losing passion entirely"] },
-        { text: "🎨 what childhood creative joy did you abandon?", options: ["drawing / painting", "building forts / legos", "making up dances / plays", "writing stories / comics"] },
-        { text: "🌙 your inner artist child needs:", options: ["permission to be bad", "more unstructured time", "encouragement & praise", "a playful environment"] },
-        { text: "🔮 what does 'success' mean to your soul?", options: ["flow & creative freedom", "recognition & legacy", "financial abundance from art", "healing myself & others"] },
-        { text: "⚡ when you experience synchronicity (meaningful coincidence):", options: ["i notice & feel guided", "i dismiss it as luck", "it rarely happens", "it fuels my faith"] },
-        { text: "🌿 artistic 'u-turn' (quitting near breakthrough):", options: ["i've done it many times", "once or twice", "i tend to push through", "i'm afraid of it"] },
-        { text: "✨ how do you handle jealousy of another artist?", options: ["let it fester", "use it to map my desires", "deny it", "get motivated briefly then quit"] },
-        { text: "🕯️ what would a 'god jar' (letting go of control) help you release?", options: ["fear of financial instability", "need for external approval", "perfectionistic grip", "comparison"] },
-        { text: "🧩 your preferred creative medium (or latent dream):", options: ["words / writing", "visual arts / painting", "music / sound", "movement / dance / theater"] },
-        { text: "💎 the biggest 'should' blocking your passion:", options: ["i should be practical", "i should prioritize family", "i should be modest", "i should have already arrived"] },
-        { text: "🌌 which astrological planet resonates with your creative drive?", options: ["☀️ Sun (core identity)", "🌙 Moon (emotion)", "✨ Venus (beauty & art)", "⚡ Uranus (innovation/rebellion)"] },
-        { text: "🏔️ life path archetype: 'the seeker' or 'the builder'?", options: ["seeker – eternal discovery", "builder – manifest & stabilize", "both fluidly", "mystic – surrender & flow"] },
-        { text: "🎭 what kind of creative community would serve you?", options: ["gentle accountability group", "wild artistic tribe", "mastermind & mentorship", "silent retreat collective"] },
-        { text: "🪷 when you face creative resistance, you:", options: ["freeze & ruminate", "push harder with will", "rest & nurture yourself", "get distracted by chores"] },
-        { text: "🌠 your favorite way to receive creative inspiration:", options: ["dreams & morning pages", "conversations with friends", "walking alone", "reading or research"] },
-        { text: "💫 the phrase 'god is a creator' feels:", options: ["empowering", "uncomfortable", "neutral / open", "inspiring"] },
-        { text: "🔮 which creative 'deadly' do you lean on?", options: ["overwork", "food/sugar", "romance obsession", "digital distraction"] },
-        { text: "🧘 your relationship to solitude for art:", options: ["essential – i crave it", "frightening – i avoid it", "i need to learn it", "i enjoy in small doses"] },
-        { text: "🌙 shadow emotion that secretly fuels your art:", options: ["grief", "anger", "loneliness", "longing"] },
-        { text: "🎨 what would an 'ideal artist date' be this week?", options: ["solo trip to art supply store", "sunset walk with sketchbook", "visit to a museum / gallery", "cooking something beautiful & new"] },
-        { text: "✨ the inner 'censor' in your mind sounds like:", options: ["a critical parent", "a snobby peer", "a perfectionist teacher", "a fearful friend"] },
-        { text: "🌊 the artist's way principle: 'creativity is a spiritual transaction' – your reaction:", options: ["yes, deeply true", "i'm skeptical but curious", "i want to believe it", "it resonates partially"] },
-        { text: "⚡ your biggest creative regret so far:", options: ["not starting earlier", "abandoning projects", "listening to naysayers", "waiting for perfect conditions"] },
-        { text: "🕯️ what does 'abundance' mean to your creative self?", options: ["time & spaciousness", "financial flow for supplies", "inner creative energy", "supportive relationships"] },
-        { text: "🌿 jungian shadow: which hidden trait wants expression?", options: ["ambition & fame", "sensual pleasure", "rebelliousness", "vulnerability & tears"] },
-        { text: "🎭 if your passion had a mythical creature symbol:", options: ["dragon (power)", "phoenix (rebirth)", "unicorn (magic)", "owl (wisdom)"] },
-        { text: "🧩 your primary creative wound (from past):", options: ["humiliation / shaming", "neglect / no encouragement", "comparison to prodigy", "overcontrol by parents"] },
-        { text: "🌙 what does 'being authentic' cost you?", options: ["disapproval from some", "financial risk", "feeling exposed", "loneliness"] },
-        { text: "✨ the one thing that would make you feel safe to create:", options: ["private space", "financial cushion", "believing mirror (ally)", "clear inner permission"] },
-        { text: "🔥 what life path theme keeps returning?", options: ["healing through art", "rebellion & innovation", "beauty & aesthetics", "storytelling & myth"] },
-        { text: "📖 if you had a 'creative altar', it would contain:", options: ["crystals & candles", "words & poetry scraps", "natural objects (feathers, stones)", "images of inspiring artists"] },
-        { text: "💎 the phrase 'easy does it' applied to your art feels:", options: ["liberating", "lazy / wrong", "necessary but hard", "wise"] },
-        { text: "🌠 what do you most need to mourn to move forward?", options: ["lost time", "the approval you never got", "a specific failed project", "the self you abandoned"] },
-        { text: "🎭 which creative 'archetype' from the artist's way calls you?", options: ["shadow artist", "crazymaker magnet", "perfectionist martyr", "recovering creator"] },
-        { text: "🕯️ what does 'faith' mean for your creative journey?", options: ["trusting the process", "believing in a higher creative force", "showing up even when doubtful", "letting go of results"] },
-        { text: "🌙 your moon sign energy (emotional creative fuel):", options: ["water: deep feeling", "fire: spontaneous inspiration", "earth: steady crafting", "air: social & idea-driven"] },
-        { text: "🌀 if you had 6 months fully supported, you'd create:", options: ["a book / collection", "an art series / exhibition", "a musical / performance", "a healing / coaching practice"] },
-        { text: "✨ your current creative kriya (spiritual emergency) shows as:", options: ["fatigue & apathy", "sudden rage", "bursts of tears", "restless energy"] },
-        { text: "🎨 the most nourishing creative ritual for you now:", options: ["three morning pages daily", "weekly artist date alone", "walking meditation", "listening to inspiring music"] },
-        { text: "🌿 what do you envy in other creators?", options: ["their discipline", "their originality", "their confidence", "their community"] },
-        { text: "💫 which statement from 'the artist's way' hits hardest?", options: ["anger is fuel", "jealousy is a map", "leap & the net appears", "treating yourself like a precious object makes you strong"] },
-        { text: "⚡ the 'virtue trap' makes you sacrifice creativity for:", options: ["being a 'good' parent/partner", "professional stability", "social approval", "religious/family expectations"] },
-        { text: "🌟 your astrological rising (outer persona) influence:", options: ["charismatic & warm", "analytical & reserved", "dreamy & intuitive", "grounded & pragmatic"] },
-        { text: "🕯️ when you hear 'you are enough', you feel:", options: ["relief", "skepticism", "hope", "sadness that i forgot"] },
-        { text: "🔮 what's the next small step you can take tomorrow?", options: ["write 3 pages stream of consciousness", "buy cheap art supplies & doodle", "schedule an artist date", "light a candle and dream for 10min"] },
-        { text: "🌙 final intuition: your soul's creative whisper is:", options: ["begin before you're ready", "play is sacred", "your weirdness is your medicine", "create to heal"] }
-    ];
-
-    // ensure exactly 70 questions (the list above length = 70) – verified.
-    let currentIdx = 0;
-    let answers = new Array(questions.length).fill(null);
-    const total = questions.length;
-
-    const panel = document.getElementById('questionsPanel');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const finishBtn = document.getElementById('finishBtn');
-    const progressFill = document.getElementById('progressFill');
-    const counterSpan = document.getElementById('counterDisplay');
-    const resultDiv = document.getElementById('resultContainer');
-
-    function updateProgressUI() {
-        const answeredCount = answers.filter(v => v !== null).length;
-        const percent = (answeredCount / total) * 100;
-        progressFill.style.width = `${percent}%`;
-        counterSpan.innerText = `${answeredCount} / ${total}`;
+    // ============================================================
+    // CORRECTED NUMEROLOGY FUNCTION (preserves master numbers 11,22,33)
+    // ============================================================
+    function getLifePathNumber(day, month, year) {
+        // Sum each component separately
+        let dSum = day.toString().split('').reduce((a,b) => a + parseInt(b), 0);
+        let mSum = month.toString().split('').reduce((a,b) => a + parseInt(b), 0);
+        let ySum = year.toString().split('').reduce((a,b) => a + parseInt(b), 0);
+        
+        let total = dSum + mSum + ySum;
+        
+        // Reduce but preserve master numbers 11, 22, 33
+        while (total > 9 && total !== 11 && total !== 22 && total !== 33) {
+            total = total.toString().split('').reduce((a,b) => a + parseInt(b), 0);
+        }
+        return total;
     }
 
-    function renderQuestion() {
-        const q = questions[currentIdx];
-        let html = `<div class="question-card"><div class="question-text">${currentIdx+1}. ${q.text}</div><div class="options-grid">`;
-        q.options.forEach((opt, idx) => {
-            const isChecked = answers[currentIdx] === idx;
-            html += `<div class="option" data-val="${idx}">
-                        <input type="radio" name="qOption" value="${idx}" id="opt_${idx}" ${isChecked ? 'checked' : ''}>
-                        <label for="opt_${idx}">${opt}</label>
+    // ============================================================
+    // 25 QUESTIONS for ALL Life Paths (1-9, 11, 22, 33)
+    // ============================================================
+    const questionSets = {
+        1: [ "I often suppress original ideas because they feel too risky.", "I feel energized when I lead a creative project.", "I fear that pursuing my boldest vision will alienate others.", "I have abandoned projects right before completion due to fear.", "I believe working alone is the only way to achieve artistic integrity.", "I envy creators who unafraid claim the spotlight.", "I hesitate to call myself an artist without visible success.", "I feel a deep pull toward creating something unprecedented.", "I often wait for permission before starting something new.", "I have a creative vision that feels too audacious to attempt.", "I feel frustrated when others don't recognize my potential.", "I would create more if not afraid of seeming arrogant.", "I start projects with enthusiasm but lose steam midway.", "True mastery requires solitary dedication and discipline.", "I feel anxious when my work is open to public criticism.", "An inner voice tells me I'm not ready to lead in my field.", "I feel most alive bringing an original idea into existence.", "I compare my progress unfavorably to established creators.", "I secretly desire recognition but feel ashamed to admit it.", "I would attempt my biggest dream with a supportive mentor.", "I feel blocked by financial risks of pursuing passion.", "I know what I want to create, but execution feels overwhelming.", "I downplay my creative ambitions to avoid seeming unrealistic.", "I feel tension between what I 'should' do and what I want.", "I am ready to take one concrete step toward authentic expression." ],
+        2: [ "I silence my creative voice to avoid conflict.", "I feel drained when I prioritize others' needs over my art.", "I abandoned projects because someone important disapproved.", "I envy artists who create without worrying about relationships.", "I struggle to identify my own desires apart from others' wants.", "I feel guilty taking time for my art instead of helping others.", "I believe my art would be selfish if I pursued it fully.", "I collaborate in ways that leave my own voice unheard.", "I feel most creative when in harmony with those around me.", "I suppress anger or grief because they might disrupt peace.", "I would create freely if not afraid of being seen as difficult.", "I have a deep need to express something vulnerable.", "I resent when others take my creative time for granted.", "I believe conflict destroys creativity, so I avoid it.", "I long for a creative partnership where I feel truly seen.", "I second-guess my artistic choices based on others' opinions.", "I feel most authentic when my art serves or heals someone.", "I over-give my creative energy until I feel depleted.", "I wish someone would give me permission to focus on my art.", "I would create more if less responsible for others' happiness.", "I feel blocked by the expectation to be 'nice' not truthful.", "I have a vision of beauty or connection to bring to the world.", "I minimize my achievements to avoid making others uncomfortable.", "I long for a creative tribe that truly understands me.", "I am ready to claim my creative voice without apology." ],
+        3: [ "I hide my playful side because it feels childish.", "I feel most alive when performing or expressing freely.", "I fear my work isn't deep enough to be meaningful.", "I abandoned projects because they weren't perfect.", "I envy artists who create effortlessly with pure joy.", "I believe true art requires suffering, so I distrust happiness.", "I feel anxious sharing work, fearing being 'too much'.", "I compare my expression to more polished creators.", "I feel most creative when playing or being spontaneous.", "I censor authentic ideas because they feel weird.", "I would express freely if not afraid of embarrassment.", "I have a deep need to tell stories only I can tell.", "I resent when others dismiss my work as frivolous.", "I believe joy and depth cannot coexist in serious art.", "I long for an audience that celebrates my unique voice.", "I second-guess whether my ideas are original enough.", "I feel most authentic making others laugh or feel deeply.", "I abandon projects when they stop feeling fun.", "I wish someone would tell me my voice matters.", "I would create more if I stopped waiting for perfect moments.", "I fear I've already said everything I have to say.", "I have a clear sense of the story I want to share.", "I minimize my gifts because I don't want to seem arrogant.", "I feel a persistent pull toward creative expression.", "I am ready to share my voice openly, imperfections welcome." ],
+        4: [ "I delay starting until conditions are perfect.", "I feel frustrated when my output doesn't meet standards.", "I fear my work will never be good enough.", "I abandoned projects because I couldn't get details right.", "I envy artists who work quickly without self-judgment.", "Discipline and structure are essential for real achievement.", "I feel anxious without immediate creative progress.", "I overwork a single piece until I lose feeling for it.", "I feel most creative when focused on technical tasks.", "I criticize early attempts as worthless and start over.", "I would create more if I trusted imperfect work has value.", "I have a deep need to master a meaningful craft.", "I resent when others succeed with inferior technique.", "Creative success requires sacrificing comfort or leisure.", "I long for patience to see a long project through.", "I measure my worth by the quality of my output.", "I feel most authentic when building something tangible.", "I research endlessly instead of actually creating.", "I wish I could silence my inner perfectionist temporarily.", "I would create more if I accepted mistakes as learning.", "I fear I'll never reach the level of mastery I desire.", "I have a clear vision of the craft I want to dedicate to.", "I dismiss my accomplishments as not good enough.", "I feel a persistent drive toward unsatisfied improvement.", "I am ready to begin, even if first attempts are imperfect." ],
+        5: [ "I abandon projects when they feel routine or repetitive.", "I feel restless committing to a single creative path.", "I fear choosing one direction means losing possibilities.", "I left projects unfinished for a new exciting idea.", "I envy artists who focus on one thing for years.", "Creative freedom means never being tied down.", "I feel anxious imagining a long-term creative commitment.", "I seek novelty instead of depth in my creative life.", "I feel most creative exploring new places or mediums.", "I tell myself I'll return to projects but rarely do.", "I would create more if variety could exist within one project.", "I need creative experiences that feel fresh and unpredictable.", "I resent when others expect me to stick with one style.", "Boredom is the enemy of creativity, so I avoid it.", "I long to dive deep without feeling trapped.", "I start multiple projects simultaneously and finish few.", "I feel most authentic trying something never done before.", "I avoid disciplined work that mastery requires.", "I wish I could find a path that stays exciting forever.", "I would create more if depth didn't mean boredom.", "I fear missing out on something better.", "I have a clear sense of experiences I want creatively.", "I minimize the value of finishing one thing completely.", "I feel tension between exploration and completion.", "I am ready to finish one project before chasing the next." ],
+        6: [ "I put my creative desires aside to care for others first.", "I feel guilty spending time on art instead of family.", "I fear pursuing my passion is selfish or irresponsible.", "I abandoned creative dreams that conflicted with duties.", "I envy artists free from caretaking obligations.", "True love means sacrifice, including my creative fulfillment.", "I feel anxious prioritizing my art over someone's needs.", "I give my creative energy away to support others' projects.", "I feel most creative when my art serves or heals others.", "I dismiss my creative longings as less important.", "I would create more if my needs mattered as much.", "I have a deep need to express something suppressed.", "I resent when others take my creative time without reciprocating.", "Being good means putting others before my own art.", "I long for permission to prioritize my creative healing.", "I feel drained because I give creatively without receiving.", "I feel most authentic when art emerges from my wounds.", "I minimize achievements to avoid burdening others.", "I wish someone would care for me so I could create freely.", "I would create more if less responsible for everyone's well-being.", "I fear my art might upset or disappoint those I love.", "I have a vision of how my creativity could heal.", "I dismiss my creative voice as unimportant compared to collective needs.", "I long to express what I've kept hidden too long.", "I am ready to claim my creative fulfillment as essential, not selfish." ],
+        7: [ "I overthink ideas until they lose their spark.", "I feel most inspired alone, in silence or nature.", "I fear my visions are too strange for others to understand.", "I abandoned projects because I couldn't find the 'right' meaning.", "I envy artists who create without needing logical sense.", "True creativity comes from a mysterious source beyond reason.", "I feel anxious when I can't intellectually justify my choices.", "I analyze my work so much I lose connection to it.", "I feel most creative trusting intuition over logic.", "I dismiss creative insights because they seem irrational.", "I would create more if I stopped needing to understand first.", "I have a deep need to express what words cannot capture.", "I resent when others demand explanations for my art.", "Solitude is essential for accessing deep creative truth.", "I long for courage to follow impulses without validation.", "My best ideas come from dreams, visions, or unexpected moments.", "I feel most authentic exploring mystery or the unknown.", "I intellectualize emotions instead of expressing them directly.", "I wish I could create without my critical mind interfering.", "I would create more if I trusted not everything needs understanding.", "I fear my work is too esoteric or inaccessible.", "I have a clear sense of deeper truth to explore through art.", "I dismiss creative impulses as impractical or meaningless.", "I feel a persistent pull to express the ineffable.", "I am ready to create from intuition, not knowing where it leads." ],
+        8: [ "I hesitate to pursue projects worrying about financial return.", "I feel energized imagining my art achieving recognition.", "I fear focusing on money will corrupt my integrity.", "I abandoned ambitions because they weren't practical.", "I envy artists who turned passion into substantial wealth.", "Struggling financially is somehow more noble for an artist.", "I feel anxious charging fairly for my creative work.", "I undervalue my skills and charge too little.", "I feel most creative building something with tangible impact.", "I dismiss my desire for abundance as shallow or greedy.", "I would create more if prosperity and authenticity could coexist.", "I need to create something generating both meaning and security.", "I resent when others profit from work less worthy than mine.", "True artists shouldn't care about money, so I suppress ambition.", "I long for confidence to price my work at true value.", "My potential feels wasted because I can't afford to pursue it.", "I feel most authentic when my art is both meaningful and viable.", "I start projects but hesitate to market or share them.", "I wish I could embrace creative success without guilt.", "I would create more if abundance follows authentic expression.", "I fear success will change me or isolate me from peers.", "I have a clear vision of the creative empire I want to build.", "I minimize my gifts by comparing to wealthier creators.", "I feel tension between creative purity and practical reality.", "I am ready to pursue both fulfillment and abundance without apology." ],
+        9: [ "My creative work should serve a greater purpose beyond myself.", "I feel drained trying to heal everyone through my art.", "I fear my vision is too large or idealistic to accomplish.", "I abandoned projects because they felt too heavy.", "I envy artists who create purely for joy without responsibility.", "Art should transform society, so I put immense pressure on myself.", "I feel anxious considering my own needs separate from collective healing.", "I exhaust myself giving art away without receiving.", "I feel most creative addressing pain or transformation.", "I dismiss my desires as selfish compared to world needs.", "I would create more if I balanced service with self-care.", "I need to express something that completes a healing cycle.", "I resent when others create without caring for the greater good.", "Suffering is required for meaningful art, so I resist joy.", "I long for energy to pursue my grand vision without burning out.", "My personal fulfillment feels less important than helping others.", "I feel most authentic when art comes from compassion.", "I take on too many creative responsibilities for the collective.", "I wish I could create just for myself without purpose weight.", "I would create more if joy was part of healing.", "I fear my work will never be enough to make a difference.", "I have a vision of the legacy I want to leave through service.", "I minimize achievements because they feel incomplete.", "I feel called to transform suffering into beauty.", "I am ready to honor my vision while also honoring rest and joy." ],
+        11: [ "I receive intuitive flashes that feel creatively significant.", "I feel overwhelmed by the intensity of my visions.", "I fear my inspired ideas are too strange or ahead of their time.", "I abandoned projects because inspiration felt too fragile.", "I envy artists who seem grounded and consistent.", "Creativity flows through me from a source beyond myself.", "I feel anxious when I can't access heightened inspiration states.", "I doubt my insights because they feel 'too much'.", "I feel most creative when I surrender control.", "I dismiss intuitive hits as imagination, not guidance.", "I would create more if I trusted my sensitivity as strength.", "I need to translate spiritual experiences into tangible form.", "I resent when others dismiss my work as impractical.", "My gift requires protecting my energy and boundaries.", "I long for courage to follow impulses without over-explaining.", "My best work comes in altered states of consciousness.", "I feel most authentic channeling something larger than myself.", "I burn out because I don't protect my sensitive system.", "I wish I could turn off sensitivity when it overwhelms.", "I would create more with better grounding practices.", "I fear I'm not 'pure' enough to channel true creativity.", "I have a clear sense of the message I am meant to share.", "I minimize my gifts by comparing to 'normal' expression.", "I feel pulled to create art that awakens or illuminates others.", "I am ready to trust my intuitive guidance and act on it." ],
+        22: [ "I conceive large-scale visions that feel impossible to execute.", "I feel frustrated by the gap between ideas and reality.", "I fear my grandest plans will never be realized.", "I abandoned major projects because scope felt overwhelming.", "I envy artists who work at an intimate, manageable scale.", "True impact requires building systems, not just objects.", "I feel anxious considering decades of work for my vision.", "I design elaborate plans but struggle to begin the first step.", "I feel most creative designing structures that serve many.", "I dismiss my big visions as delusional or grandiose.", "I would create more if I could break vision into phases.", "I need to build something that outlasts me and serves future generations.", "I resent when others don't grasp my vision's scale.", "Practical constraints are meant to be overcome, not avoided.", "I long for collaborators to help manifest what I can't build alone.", "My potential feels wasted because I can't realize big plans.", "I feel most authentic organizing resources to build something lasting.", "Perfectionism delays the start of large projects.", "I wish I could begin without solving everything first.", "I would create more if masterpieces are built one step at a time.", "I fear I'll never have enough resources to build my vision.", "I have a blueprint for something that could transform my field.", "I minimize my gifts because results take so long to appear.", "I feel driven to create order and lasting form from chaos.", "I am ready to take the first tangible step toward my grand vision." ],
+        33: [ "My creative purpose is to uplift and teach others.", "I feel drained giving wisdom freely without receiving support.", "I fear expressing my authentic voice might burden others.", "I abandoned projects because they felt too vulnerable.", "I envy artists who create without being a 'teacher' or 'guide'.", "True creativity serves love, compassion, and healing.", "I feel anxious considering my needs separate from serving others.", "I nurture everyone's creativity while neglecting my own.", "I feel most creative expressing unconditional love.", "I dismiss my desires as selfish compared to my giving role.", "I would create more if receiving was part of the cycle.", "I need to express something tender, vulnerable, and deeply true.", "I resent when others take my gifts without gratitude.", "Being good means sacrificing my art for others' comfort.", "I long for safety to express my full truth without rejection.", "My potential feels buried under duty and obligation.", "I feel most authentic when art emerges from love, not ego.", "I give creative advice I don't follow for myself.", "I wish someone would nurture my creativity the way I nurture others.", "I would create more if I believed my voice was worth hearing.", "I fear my expression might disappoint those I love.", "I have a clear sense of healing or wisdom to share through art.", "I minimize my gifts because I don't want to seem self-important.", "I feel called to express universal love through my unique lens.", "I am ready to honor my voice as a sacred gift, not a burden." ]
+    };
+
+    // ============================================================
+    // 4 PERSONAS per Life Path (1-9, 11, 22, 33) - ALL VALIDATED
+    // Thresholds: 0.00-0.75, 0.75-1.50, 1.50-2.25, 2.25-3.00
+    // ============================================================
+    const personas = {
+        1: [
+            { min: 0.00, max: 0.75, name: "The Underground Genius", desc: "You have immense talent hidden from the world. Fear of visibility keeps your light dimmed, but your creative potential is extraordinary. The world needs what only you can make.", careers: "Ghostwriter, Anonymous Creator, Behind-the-Scenes Innovator, Researcher, Consultant, Technical Artist", fuel: "Privacy, deep work sessions, trusted inner circle, legacy over fame, quiet impact, mastery without spotlight", ignition: "Share one piece of your work with one safe person this week. Let yourself be seen, just a little. You don't need to hide anymore." },
+            { min: 0.75, max: 1.50, name: "The Reluctant Leader", desc: "You have leadership potential but self-doubt holds you back. You shine when supported by mentors or collaborators who believe in you. Your voice matters more than you know.", careers: "Team Leader, Project Manager, Producer, Art Director, Creative Strategist, Editorial Lead", fuel: "Encouragement, mentorship, visible progress, structured goals, collaborative wins, accountability partners", ignition: "Find one accountability partner this week. Share your creative goal and take the first step together. You don't have to go alone." },
+            { min: 1.50, max: 2.25, name: "The Perfectionist Architect", desc: "You have grand visions but get stuck in execution details. Your perfectionism is both your gift and your cage. Learning to ship imperfect work will set you free.", careers: "Master Craftsman, Engineer, Designer, Editor, Technical Director, Quality Specialist", fuel: "Process over outcome, small daily wins, finishing imperfectly, mastery of craft, systems and structure", ignition: "Complete something small and flawed today. Ship it. Perfection is the enemy of done. Done is better than perfect." },
+            { min: 2.25, max: 3.01, name: "The Visionary Pioneer", desc: "You dream big and crave originality. Your block is fear of failure and isolation. You thrive when you trust your unique perspective and lead with courage.", careers: "Entrepreneur, Creative Director, Inventor, Solo Artist, Filmmaker, Architect, Pioneer", fuel: "Solitude, autonomy, risk-taking, public recognition, breaking new ground, innovation", ignition: "Launch one small project this week without asking permission. Lead before you feel ready. Your vision is valid." }
+        ],
+        2: [
+            { min: 0.00, max: 0.75, name: "The Hidden Healer", desc: "Your art is a form of service that you keep private. You heal through beauty and kindness, but you rarely let yourself receive. Your own healing matters too.", careers: "Art Therapist, Hospice Artist, Private Caregiver, Anonymous Creator, Healing Arts Practitioner", fuel: "Service, emotional depth, safe spaces, gratitude, witnessing transformation, privacy", ignition: "Create something only for yourself this week. Receive before you give again. Your cup must be filled first." },
+            { min: 0.75, max: 1.50, name: "The Boundary Seeker", desc: "You've given so much to others that your own creative well is dry. Learning to say no is your path back to art. Your voice deserves space.", careers: "Advocate, Consultant, Mediator, Designer, Writer, Counselor, Coach", fuel: "Protected time, clear boundaries, self-compassion, solo creative dates, reclaiming voice, permission", ignition: "Set one firm boundary this week. Take that reclaimed time for your art. No is a complete sentence." },
+            { min: 1.50, max: 2.25, name: "The Empathic Creator", desc: "Your sensitivity is your superpower. You feel deeply and translate emotion into art that moves others. Your challenge is protecting your energy while staying open.", careers: "Painter, Composer, Actor, Poet, Filmmaker, Dancer, Storyteller, Musician", fuel: "Emotion, beauty, solitude after connection, raw honesty, vulnerability, artistic flow", ignition: "Express one suppressed emotion through art today. Don't edit. Let it flow. Your feelings are your material." },
+            { min: 2.25, max: 3.01, name: "The Harmonious Collaborator", desc: "You thrive in partnership and create best when in sync with others. Your challenge is maintaining your own voice within the harmony.", careers: "Therapist, Mediator, Coach, Songwriter, Choreographer, Community Organizer, Bandleader", fuel: "Connection, emotional resonance, mutual support, beauty, shared vision, creative partnership", ignition: "Co-create something small with a trusted partner this week. Let your voice be equal in the creation." }
+        ],
+        3: [
+            { min: 0.00, max: 0.75, name: "The Hidden Gem", desc: "You have extraordinary gifts you keep hidden. Fear of being 'too much' silences your unique voice. The world is waiting for your particular brand of magic.", careers: "Voice Actor, Impressionist, Performance Artist, Comedian, Singer-Songwriter, Storyteller", fuel: "Encouragement, safe stage, small audiences, permission to be weird, applause, authentic expression", ignition: "Perform for one trusted friend this week. Let yourself be 'too much'. That's exactly enough." },
+            { min: 0.75, max: 1.50, name: "The Depth Seeker", desc: "You fear your work isn't serious enough. But your lightness has depth. Vulnerability and humor can coexist beautifully. Trust your unique blend.", careers: "Satirist, Dramedian, Playwright, Lyricist, Essayist, Graphic Novelist, Humorist", fuel: "Authenticity, emotional truth, wit, contrast, surprising honesty, intellectual play", ignition: "Write something that makes you laugh and cry in the same piece. That's your voice. Trust it." },
+            { min: 1.50, max: 2.25, name: "The Playful Storyteller", desc: "You weave magic with words and images. Your challenge is taking your work seriously without losing the joy. Play is not frivolous—it's essential.", careers: "Writer, Illustrator, Animator, Children's Author, Podcaster, Game Designer, Cartoonist", fuel: "Imagination, whimsy, narrative, wonder, creative play, audience reaction, joy", ignition: "Write or draw something silly this week and share it. Joy is not frivolous—it's your medicine." },
+            { min: 2.25, max: 3.01, name: "The Radiant Performer", desc: "You were born to shine. Your joy is contagious when you let yourself be seen. Stage fright is just excitement in disguise. Step into the light.", careers: "Actor, Musician, Comedian, Speaker, Content Creator, Entertainer, Dancer", fuel: "Applause, connection, play, spontaneity, laughter, being seen, audience energy", ignition: "Perform or share something publicly this week. The world needs your light. Don't dim it." }
+        ],
+        4: [
+            { min: 0.00, max: 0.75, name: "The Hidden Craftsman", desc: "Your skill is immense but hidden. Fear of judgment keeps your work in drawers. The world deserves to see what your hands can make.", careers: "Restoration Artist, Custom Fabricator, Instrument Maker, Luthier, Toolmaker, Fine Craftsman", fuel: "Privacy, appreciation from experts, legacy, quiet recognition, commission work, mastery", ignition: "Show one piece to someone who will appreciate the craft this week. Let yourself be seen." },
+            { min: 0.75, max: 1.50, name: "The Overthinker", desc: "You research and plan endlessly. Your knowledge exceeds your output. Action, not more preparation, is your medicine. Start before you're ready.", careers: "Researcher, Critic, Curator, Conservator, Editor, Technical Writer, Analyst", fuel: "Clarity, information, systems, expert feedback, quality standards, precision", ignition: "Set a timer for 30 minutes today. Create without stopping. No edits. No second-guessing." },
+            { min: 1.50, max: 2.25, name: "The Disciplined Artisan", desc: "Your dedication to craft is unmatched. Perfectionism serves you and also slows you. Imperfect action beats perfect inaction every time.", careers: "Jeweler, Tailor, Restorer, Calligrapher, Bookbinder, Watchmaker, Printmaker", fuel: "Skill development, routine, finished objects, precision, mastery, craftsmanship", ignition: "Create something intentionally imperfect this week. Call it a 'study' and move to the next." },
+            { min: 2.25, max: 3.01, name: "The Master Builder", desc: "You create with patience and precision. Your work stands the test of time. Your challenge is starting before you're ready. Trust the process.", careers: "Architect, Engineer, Woodworker, Potter, Sculptor, Chef, Builder, Contractor", fuel: "Order, tangible results, mastery, tradition, quality, legacy, structure", ignition: "Start one project today with no plan. Let the materials guide you. Trust your hands." }
+        ],
+        5: [
+            { min: 0.00, max: 0.75, name: "The Late Bloomer", desc: "You've sampled everything and mastered nothing yet. Your time is now. Pick one path and walk it for a season. Depth will come.", careers: "Generalist, Creative Strategist, Connector, Curator, Experience Designer, Polymath", fuel: "Permission to choose, accountability, small wins, momentum, completion, focus", ignition: "Choose one medium. One month. One finished piece. Let the others wait. You can do this." },
+            { min: 0.75, max: 1.50, name: "The Restless Innovator", desc: "You chase the new and abandon the old. Your brilliance is in ideas; your growth is in follow-through. Completion is its own adventure.", careers: "Inventor, Startup Founder, Trend Forecaster, Futurist, Concept Artist, Designer", fuel: "Disruption, novelty, intellectual challenge, future visions, creative freedom, ideation", ignition: "Commit to one idea for 30 days. No new projects until it's done. Depth over breadth." },
+            { min: 1.50, max: 2.25, name: "The Multi-Passionate", desc: "You have many interests and that's a strength, not a flaw. Your challenge is finishing something among all the starts. Completion is freedom.", careers: "Entrepreneur, Freelancer, Content Creator, Designer, Consultant, Producer, Artist", fuel: "Variety, learning, projects, flexibility, recognition for breadth, creative exploration", ignition: "Choose one project to finish this month. The others can wait. Completion is its own reward." },
+            { min: 2.25, max: 3.01, name: "The Adventurous Creator", desc: "You need variety and freedom. Your creativity thrives on new experiences. Commitment is your growth edge. Adventure and depth can coexist.", careers: "Travel Writer, Photographer, Expedition Leader, Documentary Maker, Event Designer, Explorer", fuel: "Novelty, travel, risk, spontaneity, sensory experience, storytelling, freedom", ignition: "Go somewhere new today. Create something inspired by that place. No plan. Just follow wonder." }
+        ],
+        6: [
+            { min: 0.00, max: 0.75, name: "The Wounded Healer", desc: "Your pain becomes beauty. Your suffering becomes service. Your art transforms trauma into gift for others. Your own healing is the first masterpiece.", careers: "Memoirist, Expressive Arts Therapist, Spoken Word Artist, Activist, Grief Counselor, Poet", fuel: "Authenticity, catharsis, shared experience, healing, witnessing, transformation", ignition: "Create something from your deepest wound. Share it with one safe person. Your pain has purpose." },
+            { min: 0.75, max: 1.50, name: "The Caregiver Artist", desc: "You've put everyone first. Your creative flame has dimmed. Reclaiming your art is not selfish—it's essential. You cannot pour from an empty cup.", careers: "Teacher, Mentor, Parent-Artist, Community Artist, Social Practice Artist, Guide", fuel: "Permission, childcare, guilt-free time, supportive community, recognition, rest", ignition: "Schedule 3 hours of creative time this week. Guard it like a doctor's appointment. You matter." },
+            { min: 1.50, max: 2.25, name: "The Nurturing Visionary", desc: "You have a vision for a kinder world. Your art is your offering. Don't forget to receive as much as you give. Balance is everything.", careers: "Social Entrepreneur, Nonprofit Founder, Community Muralist, Healing Arts Practitioner, Activist", fuel: "Impact, collaboration, gratitude, collective success, visible change, community", ignition: "Ask for help with your creative project this week. Receiving is not weakness—it's balance." },
+            { min: 2.25, max: 3.01, name: "The Compassionate Creator", desc: "Your art heals. You create from love and for love. Your challenge is creating for yourself as much as for others. You are worthy of your own art.", careers: "Art Therapist, Healer, Counselor, Musician, Poet, Nurse-Artist, Chaplain", fuel: "Service, emotional resonance, gratitude, witnessing healing, community, love", ignition: "Create something only for yourself this week. You deserve your own art. Let it fill you." }
+        ],
+        7: [
+            { min: 0.00, max: 0.75, name: "The Hidden Mystic", desc: "You have profound spiritual experiences you keep secret. Your art could bridge worlds. Share your visions. The world needs your particular mysticism.", careers: "Visionary Artist, Channel, Meditation Guide, Sound Healer, Dreamworker, Mystic", fuel: "Sacred space, permission, secrecy, trust, spiritual community, solitude", ignition: "Share one mystical experience through art this week. Let one person witness your truth." },
+            { min: 0.75, max: 1.50, name: "The Over-Analyzer", desc: "You think so much you forget to feel. Your art lives in your head. Come down into your body and heart. Feeling is not weakness—it's material.", careers: "Critic, Editor, Analyst, Consultant, Strategist, Planner, Academic", fuel: "Structure, logic, clarity, systems, expertise, intellectual mastery, precision", ignition: "Set a timer for 15 minutes today. Create without stopping. No thinking. Just doing." },
+            { min: 1.50, max: 2.25, name: "The Intellectual Seeker", desc: "You think deeply and create from insight. Your mind is powerful. Your heart needs a seat at the table too. Wisdom lives in both.", careers: "Philosopher, Critic, Academic, Essayist, Researcher, Theorist, Scholar", fuel: "Ideas, depth, meaning, intellectual challenge, understanding, discovery", ignition: "Create without thinking today. Let your hands move before your brain catches up. Trust instinct." },
+            { min: 2.25, max: 3.01, name: "The Mystic Artist", desc: "Your creativity flows from the invisible. You translate mystery into form. Trust your visions—they are real. You are a bridge between worlds.", careers: "Visionary Painter, Composer, Poet, Tarot Artist, Iconographer, Sacred Artist, Mystic", fuel: "Solitude, mystery, dreams, intuition, ritual, the numinous, transcendence", ignition: "Follow one intuitive impulse today without analyzing it. Create from the unknown. Trust it." }
+        ],
+        8: [
+            { min: 0.00, max: 0.75, name: "The Underground Titan", desc: "You have immense power and influence you hide. Your art could move markets. Step into your bigness. The world is ready for your scale.", careers: "Investor, Advisor, Strategist, Philanthropist, Collector, Patron, Power Broker", fuel: "Legacy, discretion, impact, leverage, behind-the-scenes power, influence", ignition: "Claim your ambition aloud this week. Tell one person your real goal. Let it be known." },
+            { min: 0.75, max: 1.50, name: "The Practical Creator", desc: "You believe art and money don't mix. That belief is your only block. Abundance is available to you too. Money is just energy—use it well.", careers: "Freelancer, Consultant, Designer, Architect, Craftsman, Small Business Owner", fuel: "Practicality, stability, proven methods, client work, steady income, security", ignition: "Set a rate that feels uncomfortable. Offer it. You are worth more than you think." },
+            { min: 1.50, max: 2.25, name: "The Reluctant Mogul", desc: "You have ambition you suppress. You want success but fear it changes you. Money is just energy—use it for good. You can have both.", careers: "Agent, Manager, Curator, Arts Administrator, Creative Entrepreneur, Executive", fuel: "Permission, mentors, abundance mindset, strategic planning, visible success, growth", ignition: "Write down your biggest financial goal for your art this week. Then take one step toward it." },
+            { min: 2.25, max: 3.01, name: "The Magnificent Manifestor", desc: "You are meant to build empires of meaning and wealth. Your art can be both profitable and profound. Abundance is your birthright.", careers: "Creative Director, Producer, Gallery Owner, Publisher, Brand Builder, CEO", fuel: "Abundance, impact, legacy, recognition, financial freedom, power, scale", ignition: "Charge what you're worth for one creative service this week. Abundance is not greed—it's alignment." }
+        ],
+        9: [
+            { min: 0.00, max: 0.75, name: "The Anonymous Saint", desc: "You serve through art without wanting credit. Your humility is beautiful. But you deserve to be seen too. Receiving is part of giving.", careers: "Ghostwriter, Anonymous Donor, Secret Healer, Behind-the-Scenes Creator, Quiet Servant", fuel: "Privacy, quiet impact, gratitude, service without recognition, humility, peace", ignition: "Let one person thank you publicly for your creative gift this week. Receive it without deflecting." },
+            { min: 0.75, max: 1.50, name: "The Exhausted Idealist", desc: "You've given everything to your vision. You're depleted. Rest is not quitting—it's strategy for the long haul. You cannot save the world empty.", careers: "Nonprofit Leader, Social Worker, Teacher, Healer, Advocate, Community Organizer", fuel: "Rest, support, delegation, self-compassion, community care, replenishment", ignition: "Take a full day off from creating this week. Do nothing. Rest is revolutionary for you." },
+            { min: 1.50, max: 2.25, name: "The Wounded Prophet", desc: "Your pain becomes prophecy. Your suffering transforms into art that heals others. Your own healing matters too. Tend to yourself first.", careers: "Memoirist, Spoken Word Artist, Activist, Grief Worker, Expressive Arts Therapist, Poet", fuel: "Catharsis, witnessing, transformation, shared humanity, redemption, truth", ignition: "Create from your deepest wound this week. Then receive comfort. Let yourself be held." },
+            { min: 2.25, max: 3.01, name: "The Visionary Healer", desc: "Your art is a prayer for the world. You see what could be and create toward it. Don't burn out—pace yourself. The marathon needs you.", careers: "Activist Artist, Documentary Maker, Community Organizer, Public Artist, Healer, Visionary", fuel: "Purpose, impact, collective healing, legacy, social change, hope", ignition: "Create one small piece that serves your vision this week. Rest. Then create another. Sustain yourself." }
+        ],
+        11: [
+            { min: 0.00, max: 0.75, name: "The Hidden Oracle", desc: "You have profound gifts you hide. Fear of being 'crazy' silences you. Your visions are real. Share them. The world needs your particular magic.", careers: "Channel, Mystical Artist, Oracle Card Creator, Prophetic Poet, Visionary Filmmaker, Seer", fuel: "Safe witness, permission, secrecy, spiritual community, validation, trust", ignition: "Share one vision with one trusted soul this week. Let your truth be witnessed. You are not crazy." },
+            { min: 0.75, max: 1.50, name: "The Overwhelmed Mystic", desc: "Your gifts sometimes feel like a burden. The intensity can be too much. Grounding practices are your medicine. You need roots to hold your wings.", careers: "Spiritual Counselor, Meditation Teacher, Yoga Instructor, Reiki Master, Breathwork Facilitator", fuel: "Grounding, nature, routine, physical practice, community, embodiment", ignition: "Spend 10 minutes barefoot on the earth before creating this week. Ground the energy. Then channel." },
+            { min: 1.50, max: 2.25, name: "The Sensitive Seer", desc: "You feel everything. Your sensitivity is your gift. Your challenge is protecting your energy while staying open. Boundaries are sacred.", careers: "Energy Healer, Intuitive Coach, Sound Healer, Empathic Artist, Dreamworker, Guide", fuel: "Protection, grounding, spiritual hygiene, safe containers, sacred space, ritual", ignition: "Create a ritual before creating this week. Protect your energy. Then open the channel fully." },
+            { min: 2.25, max: 3.01, name: "The Illuminated Channel", desc: "You receive downloads of inspiration. Your art is not yours—it comes through you. Trust the transmission. You are a vessel for the divine.", careers: "Visionary Artist, Channel, Mystic, Oracle, Sacred Musician, Intuitive Guide, Prophet", fuel: "Spiritual practice, solitude, ritual, dreams, divine connection, surrender", ignition: "Wake 30 minutes early tomorrow. Write whatever comes through. Don't edit. Transmit. Trust." }
+        ],
+        22: [
+            { min: 0.00, max: 0.75, name: "The Hidden Titan", desc: "You have the capacity to build empires but stay small. Your humility is false modesty. The world needs your structures. Step into your scale.", careers: "Advisor, Consultant, Strategist, Investor, Trustee, Patron, Power Behind Throne", fuel: "Legacy, discretion, quiet power, behind-the-scenes impact, scale, influence", ignition: "Claim your architect identity this week. Say 'I build things that last' and mean it. Then build one small thing." },
+            { min: 0.75, max: 1.50, name: "The Overwhelmed Builder", desc: "Your vision is so large you don't know where to start. Begin anywhere. Action dissolves overwhelm. One brick at a time builds cathedrals.", careers: "Project Manager, COO, Operations Director, Planner, Coordinator, Implementer", fuel: "Phases, milestones, teams, systems, visible progress, small wins", ignition: "Break your vision into 100 steps today. Do step one. That's all. Just step one." },
+            { min: 1.50, max: 2.25, name: "The Reluctant Giant", desc: "Your potential is massive but you shrink from it. The world needs your bigness. Step into your scale. You were made for this.", careers: "Executive, Developer, Founder, Institution Builder, Creative Director, Leader", fuel: "Mentorship, permission, strategic partners, resources, belief, vision", ignition: "Tell one person your biggest vision this week. Say it aloud. Let it exist in the world. Then take one step." },
+            { min: 2.25, max: 3.01, name: "The Master Architect", desc: "You see systems and structures others miss. Your vision can transform industries. Start with one brick. Cathedrals begin with single stones.", careers: "Architect, Urban Planner, Systems Designer, Producer, Director, Master Planner, Builder", fuel: "Scale, legacy, order, blueprints, long-term vision, collaboration, impact", ignition: "Draw one small part of your big vision today. Just one piece. Begin. The rest will follow." }
+        ],
+        33: [
+            { min: 0.00, max: 0.75, name: "The Hidden Saint", desc: "You serve secretly. Your art uplifts without credit. But you deserve to be seen. Let yourself receive. You cannot pour from an empty vessel.", careers: "Anonymous Creator, Secret Benefactor, Quiet Healer, Uncredited Artist, Silent Guide", fuel: "Privacy, humility, service, quiet impact, gratitude, inner peace", ignition: "Let yourself be publicly thanked for one creative gift this week. Receive it fully. You have earned it." },
+            { min: 0.75, max: 1.50, name: "The Wise Teacher", desc: "You have wisdom to share through art. Your voice can guide others. Don't hide your light under self-doubt. The students are waiting.", careers: "Author, Speaker, Workshop Leader, Mentor, Coach, Professor, Guide", fuel: "Wisdom, transmission, student growth, legacy, gratitude, teaching", ignition: "Teach one person one creative thing this week. Your voice matters. Share what you know." },
+            { min: 1.50, max: 2.25, name: "The Exhausted Giver", desc: "You've given everything to everyone. Your creative well is dry. Restoring yourself is not selfish—it's essential. You are the instrument and the artist.", careers: "Therapist, Social Worker, Nurse, Caregiver, Teacher, Healer, Minister", fuel: "Rest, boundaries, self-compassion, receiving, replenishment, solitude", ignition: "Take a full creative Sabbath this week. Do nothing. Let yourself be filled. Then create from fullness." },
+            { min: 2.25, max: 3.01, name: "The Universal Heart", desc: "Your art is love made visible. You teach through beauty. Your challenge is receiving as much as you give. Balance is the path to sustainability.", careers: "Teacher, Mentor, Healer, Sacred Artist, Community Leader, Guide, Wisdom Keeper", fuel: "Love, service, gratitude, witnessing growth, collective healing, compassion", ignition: "Create something for yourself this week. Receive your own gift. You are worthy of your own art." }
+        ]
+    };
+
+    let currentLifePath = null;
+    let currentQuestions = [];
+    let answers = [];
+    let currentQIndex = 0;
+
+    const stepLifeDiv = document.getElementById('stepLifePath');
+    const questionnaireDiv = document.getElementById('questionnaireArea');
+    const questionsContainer = document.getElementById('questionsContainer');
+    const prevBtn = document.getElementById('prevQBtn');
+    const nextBtn = document.getElementById('nextQBtn');
+    const revealBtn = document.getElementById('revealBtn');
+    const progressFill = document.getElementById('progressFill');
+    const counterSpan = document.getElementById('counterText');
+    const resultPanel = document.getElementById('resultPanel');
+
+    document.getElementById('calculateBtn').addEventListener('click', () => {
+        const day = parseInt(document.getElementById('birthDay').value);
+        const month = parseInt(document.getElementById('birthMonth').value);
+        const year = parseInt(document.getElementById('birthYear').value);
+        if (isNaN(day) || isNaN(month) || isNaN(year) || day < 1 || day > 31 || month < 1 || month > 12 || year < 1900 || year > 2026) {
+            alert("Please enter a valid birth date.");
+            return;
+        }
+        currentLifePath = getLifePathNumber(day, month, year);
+        
+        // Get question set for this life path, fallback to path 7 if missing
+        let qSet = questionSets[currentLifePath];
+        if (!qSet) {
+            console.warn(`No questions for Life Path ${currentLifePath}, using default path 7`);
+            qSet = questionSets[7];
+        }
+        currentQuestions = [...qSet];
+        answers = new Array(currentQuestions.length).fill(null);
+        currentQIndex = 0;
+        stepLifeDiv.style.display = 'none';
+        questionnaireDiv.style.display = 'block';
+        renderCurrentQuestion();
+        updateProgressAndCounter();
+    });
+
+    function renderCurrentQuestion() {
+        const qText = currentQuestions[currentQIndex];
+        const scaleLabels = ["Not true", "Slightly true", "Moderately true", "Always true"];
+        let html = `<div class="question-card">
+                        <div class="question-text">${currentQIndex+1}. ${qText}</div>
+                        <div class="scale-row">
+                            <span>${scaleLabels[0]}</span><span>${scaleLabels[1]}</span><span>${scaleLabels[2]}</span><span>${scaleLabels[3]}</span>
+                        </div>
+                        <div class="options">`;
+        for (let i = 0; i < 4; i++) {
+            const checkedAttr = answers[currentQIndex] === i ? 'checked' : '';
+            html += `<div class="option-item" data-val="${i}">
+                        <input type="radio" name="qOption" value="${i}" id="opt_${i}" ${checkedAttr}>
+                        <label for="opt_${i}" class="option-label">${scaleLabels[i]}</label>
                      </div>`;
-        });
+        }
         html += `</div></div>`;
-        panel.innerHTML = html;
-        // attach listeners
-        document.querySelectorAll('.option').forEach(optDiv => {
-            const radio = optDiv.querySelector('input[type="radio"]');
+        questionsContainer.innerHTML = html;
+
+        document.querySelectorAll('.option-item').forEach(optDiv => {
+            const radio = optDiv.querySelector('input');
+            optDiv.addEventListener('click', (e) => {
+                if (e.target.tagName !== 'INPUT') {
+                    radio.checked = true;
+                    const changeEvent = new Event('change', { bubbles: true });
+                    radio.dispatchEvent(changeEvent);
+                }
+            });
             if (radio) {
                 radio.addEventListener('change', (e) => {
-                    answers[currentIdx] = parseInt(e.target.value);
-                    updateProgressUI();
-                    updateNavButtons();
-                });
-                // also click on div
-                optDiv.addEventListener('click', (e) => {
-                    if (e.target.tagName !== 'INPUT') {
-                        const inp = optDiv.querySelector('input');
-                        if (inp) inp.checked = true;
-                        answers[currentIdx] = parseInt(inp.value);
-                        updateProgressUI();
-                        updateNavButtons();
-                        // force re-render to reflect radio UI? just dispatch
-                        const changeEvent = new Event('change', { bubbles: true });
-                        inp.dispatchEvent(changeEvent);
-                    }
+                    answers[currentQIndex] = parseInt(e.target.value);
+                    updateProgressAndCounter();
+                    updateNavState();
                 });
             }
         });
-        updateNavButtons();
+        updateNavState();
     }
 
-    function updateNavButtons() {
-        prevBtn.disabled = (currentIdx === 0);
-        const isLast = (currentIdx === total-1);
+    function updateProgressAndCounter() {
+        const answered = answers.filter(a => a !== null).length;
+        const total = currentQuestions.length;
+        const percent = total > 0 ? (answered / total) * 100 : 0;
+        progressFill.style.width = `${percent}%`;
+        counterSpan.innerText = `${answered}/${total}`;
+    }
+
+    function updateNavState() {
+        prevBtn.disabled = (currentQIndex === 0);
+        const isLast = (currentQIndex === currentQuestions.length - 1);
         if (isLast) {
             nextBtn.style.display = 'none';
-            finishBtn.style.display = 'inline-flex';
+            revealBtn.style.display = 'inline-flex';
         } else {
             nextBtn.style.display = 'inline-flex';
-            finishBtn.style.display = 'none';
+            revealBtn.style.display = 'none';
         }
-        // enable finish only if all answered (but final check on click)
     }
 
-    function nextStep() {
-        if (answers[currentIdx] === null && currentIdx < total) {
-            alert("🌙 please select an option before continuing — this question guides your archetype.");
+    function nextQuestion() {
+        if (answers[currentQIndex] === null) {
+            alert("Please select an answer before continuing.");
             return;
         }
-        if (currentIdx < total-1) {
-            currentIdx++;
-            renderQuestion();
+        if (currentQIndex < currentQuestions.length - 1) {
+            currentQIndex++;
+            renderCurrentQuestion();
         }
     }
 
-    function prevStep() {
-        if (currentIdx > 0) {
-            currentIdx--;
-            renderQuestion();
+    function prevQuestion() {
+        if (currentQIndex > 0) {
+            currentQIndex--;
+            renderCurrentQuestion();
         }
     }
 
-    // passion algorithm based on jungian, artist's way core, life path, zodiac inclination
-    function computePassion() {
-        // scoring 8 archetypes from answers
-        let archetypeScores = {
-            visionaryAlchemist: 0, soulHealer: 0, creativeRebel: 0, masterCraftsman: 0, mythWeaver: 0, intuitiveMystic: 0, radiantPerformer: 0, earthGuardian: 0
-        };
-        for (let i=0; i<answers.length; i++) {
-            let ans = answers[i];
-            if (ans === null) continue;
-            // heuristic mapping using question index & answer patterns
-            if ([3,5,7,9,14,23,29,37,42,48,58].includes(i)) archetypeScores.visionaryAlchemist += (ans % 2 === 0 ? 2 : 1);
-            if ([2,10,17,20,31,40,49,55].includes(i)) archetypeScores.soulHealer += (ans === 1 || ans === 3 ? 2 : 0);
-            if ([1,8,13,19,27,35,44,53,61].includes(i)) archetypeScores.creativeRebel += (ans === 2 ? 2 : ans === 0 ? 1 : 0);
-            if ([4,6,15,24,33,39,50,60].includes(i)) archetypeScores.masterCraftsman += (ans === 0 ? 2 : ans === 1 ? 1 : 0);
-            if ([12,22,30,41,47,56,63].includes(i)) archetypeScores.mythWeaver += (ans === 1 ? 2 : ans === 2 ? 1 : 0);
-            if ([11,18,26,36,45,54,62,65].includes(i)) archetypeScores.intuitiveMystic += (ans === 3 ? 2 : ans === 0 ? 1 : 0);
-            if ([16,21,32,43,52,59,64].includes(i)) archetypeScores.radiantPerformer += (ans === 1 ? 2 : ans === 0 ? 1 : 0);
-            if ([25,28,34,38,46,57,66,67].includes(i)) archetypeScores.earthGuardian += (ans === 2 ? 2 : ans === 1 ? 1 : 0);
+    function computePersona() {
+        const sum = answers.reduce((a, b) => a + b, 0);
+        const avgDepth = sum / answers.length;
+        const personaList = personas[currentLifePath];
+        
+        // Ultimate fallback if persona list doesn't exist for this path
+        if (!personaList || personaList.length === 0) {
+            return {
+                name: "The Authentic Soul", 
+                desc: "Your path is unique and powerful. Trust your inner knowing and let your creativity guide you. The universe is supporting your journey.",
+                careers: "Creator, Artist, Healer, Guide, Visionary, Innovator",
+                fuel: "Authenticity, courage, self-trust, curiosity, persistence, wonder",
+                ignition: "Begin with three morning pages and one solo artist date this week. Trust the process. Leap, and the net will appear."
+            };
         }
-        let top = Object.keys(archetypeScores).reduce((a,b) => archetypeScores[a] > archetypeScores[b] ? a : b);
-        const names = {
-            visionaryAlchemist: "✦ VISIONARY ALCHEMIST ✦", soulHealer: "🌿 SOUL HEALER 🌿", creativeRebel: "⚡ CREATIVE REBEL ⚡", masterCraftsman: "🖌️ MASTER CRAFTSMAN",
-            mythWeaver: "📖 MYTH WEAVER", intuitiveMystic: "🌙 INTUITIVE MYSTIC", radiantPerformer: "🎭 RADIANT PERFORMER", earthGuardian: "🌍 EARTH GUARDIAN"
-        };
-        let actionMap = {
-            visionaryAlchemist: "morning pages + vision board. take a 'crazy' small step toward impossible dream. this week: create an artist's altar with images of your future work.",
-            soulHealer: "merge art with compassion. begin a healing journal. offer one creative gift to a friend. artist date: walk & collect objects that symbolize release.",
-            creativeRebel: "break one 'should' daily. write a rebellious manifesto. sign up for an unconventional class or open mic. rebel through ritual.",
-            masterCraftsman: "daily craft practice 15min. learn a traditional skill. organize your tools. finish a tiny tangible piece by end of week.",
-            mythWeaver: "write a myth about your own life. start a story scrapbook. share a tale with a trusted circle. artist date: library visit for folklore.",
-            intuitiveMystic: "dream journal before bed. pull tarot for creative guidance. meditate 5min before creating. let intuition lead a small project.",
-            radiantPerformer: "record yourself or perform for one ally. take an improv drop-in. dress as your artist persona for one hour.",
-            earthGuardian: "create with natural materials. garden or plant something. weekly nature sketch. ground before creating with 5min barefoot."
-        };
-        return { title: names[top], action: actionMap[top], topKey: top };
+        
+        // Find matching persona using proper interval logic
+        for (let i = 0; i < personaList.length; i++) {
+            const p = personaList[i];
+            if (i === personaList.length - 1) {
+                if (avgDepth >= p.min) return p;
+            } else {
+                if (avgDepth >= p.min && avgDepth < p.max) return p;
+            }
+        }
+        return personaList[personaList.length - 1];
     }
 
     function showResults() {
         if (answers.some(a => a === null)) {
-            alert("🌙 please answer all 70 questions before revealing your authentic passion. each answer refines the map.");
+            alert("Please answer all questions before revealing your passion blueprint.");
             return;
         }
-        const res = computePassion();
-        resultDiv.style.display = "block";
-        resultDiv.innerHTML = `
-            <div style="font-size:1.7rem; font-weight:600;">✧ YOUR AUTHENTIC PASSION ARCHETYPE ✧</div>
-            <div class="result-archetype">${res.title}</div>
-            <div class="badge-cluster"><span class="pill">jungian shadow integrated</span><span class="pill">artist's way awakened</span><span class="pill">astral signature aligned</span></div>
-            <div class="action-steps"><strong>🌙 RITUAL ACTIONS & NEXT STEPS</strong><br>${res.action}<br><br>✨ <strong>core practice</strong>: 3 mornings of stream-of-consciousness writing + one sacred artist date (solo creative play) every week. remember: “leap, and the net will appear.”</div>
-            <button id="resetQuest" style="margin-top:18px; background:#41367a;">⟳ restart the quest</button>
+        const persona = computePersona();
+        
+        // Map life path number to display name
+        const pathNames = {
+            1: "The Pioneer", 2: "The Diplomat", 3: "The Creator", 4: "The Builder",
+            5: "The Adventurer", 6: "The Nurturer", 7: "The Seeker", 8: "The Powerhouse",
+            9: "The Humanitarian", 11: "The Intuitive", 22: "The Master Builder", 33: "The Master Teacher"
+        };
+        const pathDisplay = pathNames[currentLifePath] || `Life Path ${currentLifePath}`;
+        
+        resultPanel.style.display = "block";
+        resultPanel.innerHTML = `
+            <div style="font-size:0.9rem; letter-spacing:2px; opacity:0.8;">LIFE PATH ${currentLifePath} — ${pathDisplay}</div>
+            <div style="font-size:1rem; letter-spacing:2px; margin-top: 0.5rem;">YOUR AUTHENTIC PASSION PERSONA</div>
+            <div class="passion-title">${persona.name}</div>
+            <div class="persona-desc">${persona.desc}</div>
+            <div class="action-box">
+                <strong>🔥 CREATIVE FUEL</strong><br>${persona.fuel}<br><br>
+                <strong>🎯 IDEAL PATHS</strong><br>${persona.careers.split(',').map(c => `<span class="career-pill">${c.trim()}</span>`).join('')}<br><br>
+                <strong>⚡ YOUR IGNITION RITUAL</strong><br>${persona.ignition}<br><br>
+                <strong>🌿 DAILY PRACTICE</strong><br>Three pages of stream-of-consciousness writing each morning + one solo artist date weekly.
+            </div>
+            <div style="margin-top: 1rem; font-style: italic; border-top: 1px solid #f0cf8e40; padding-top: 1rem;">
+                "Leap, and the net will appear." — Trust your depth. Your passion is not a destination—it is the path itself. Begin today.
+            </div>
+            <button id="restartJourney" style="margin-top: 1.5rem;">⟳ Begin New Journey</button>
         `;
-        document.getElementById('resetQuest')?.addEventListener('click', () => {
-            answers.fill(null);
-            currentIdx = 0;
-            renderQuestion();
-            resultDiv.style.display = 'none';
-            updateProgressUI();
-            nextBtn.style.display = 'inline-flex';
-            finishBtn.style.display = 'none';
-        });
+        document.getElementById('restartJourney')?.addEventListener('click', () => window.location.reload());
     }
 
-    nextBtn.addEventListener('click', nextStep);
-    prevBtn.addEventListener('click', prevStep);
-    finishBtn.addEventListener('click', showResults);
-    renderQuestion();
-    updateProgressUI();
+    nextBtn.addEventListener('click', nextQuestion);
+    prevBtn.addEventListener('click', prevQuestion);
+    revealBtn.addEventListener('click', showResults);
 </script>
 </body>
 </html>
