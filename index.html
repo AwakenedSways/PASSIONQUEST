@@ -37,6 +37,17 @@
             z-index: 0;
         }
 
+         }
+        
+        .cosmic-container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+    
         .container {
             max-width: 1050px;
             margin: 0 auto;
@@ -50,6 +61,30 @@
             box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5);
         }
 
+                .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .your-logo {
+            max-width: 260px;
+            max-height: 90px;
+            filter: drop-shadow(0 0 20px rgba(80, 200, 120, 0.5));
+            border-radius: 16px;
+            transition: filter 0.3s;
+        }
+        
+        .glyph-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        
         h1 {
             font-size: 2rem;
             text-align: center;
@@ -356,7 +391,6 @@
         <div class="footnote">All Rights Reserved</div>
     </div>
     <div id="resultPanel" class="result-card"></div>
-    <footer>archetypal cartography · creative awakening · soul-led action</footer>
 </div>
 
 <script>
